@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}注册{% endblock %}
+
+{% block content %}
+    <form class="layui-form layui-form-pane" action="" method="post">
+    {% csrf_token %}
+        <div class="layui-form-item">
+            <label class="layui-form-label">用户名</label>
+            <div class="layui-input-block" >
+                <input type="text" name="username" placeholder="用户名为3-30位" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="name" placeholder="请输入您的姓名" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">邀请码</label>
+            <div class="layui-input-block">
+                <input type="text" name="code" placeholder="请输入邀请码" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+                <input type="password" name="password" placeholder="密码为6-30位" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="formDemo" type="submit">注册</button>
+                <a href="/login"><button class="layui-btn"  type="button">登陆</button></a>
+            </div>
+        </div>
+        {{err_msg}}
+        {{tip}}
+    </form>
+
+{% endblock %}
